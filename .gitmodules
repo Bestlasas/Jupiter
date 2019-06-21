@@ -1,0 +1,3 @@
+[submodule "SecurityServices"]
+	path = SecurityServices
+	url = https://github.com/Bestlasas/SecurityServices.git
