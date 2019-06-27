@@ -9,5 +9,7 @@ namespace Jupiter.Helpers.Interfaces
         Result<T> Execute<T>(Func<IDbConnection, Result<T>> action);
         
         Result Execute(Func<IDbConnection, Result> action);
+
+        T Execute<T>(Func<IDbConnection, T> action);
     }
 }

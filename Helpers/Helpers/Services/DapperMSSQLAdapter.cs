@@ -38,6 +38,22 @@ namespace Jupiter.Helpers.Services
             return new SqlConnection(_connectionString);
         }
 
+        public T Execute<T>(Func<IDbConnection, T> action)
+        {
+            var result = new Result<T>();
+            try
+            {
+                using (var connection = Open())
+                {
+                   return action(connection);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public Result<T> Execute<T>(Func<IDbConnection, Result<T>> action)
         {
             var result = new Result<T>();
