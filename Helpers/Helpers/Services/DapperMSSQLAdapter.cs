@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using Jupiter.Helpers.Interfaces;
 using Jupiter.Helpers.Models.Utils;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -48,7 +47,7 @@ namespace Jupiter.Helpers.Services
                    return action(connection);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
